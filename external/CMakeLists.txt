@@ -10,7 +10,6 @@
 cmake_minimum_required(VERSION 3.13.2 FATAL_ERROR)
 
 
-
 ##########################################################################################
 # ┌──────────────────────────────────────────────────────────────────────────────────────┐
 # │  CMake status output                                                                 │
@@ -38,6 +37,10 @@ endif()
 # │  CMake include external libraries and frameworks                                     │
 # └──────────────────────────────────────────────────────────────────────────────────────┘
 ##########################################################################################
+if (BUILD_TESTING)
+    add_subdirectory(cmock)
+    add_subdirectory(unity)
+
+endif()
+
 add_subdirectory(c_exception)
-add_subdirectory(cmock)
-add_subdirectory(unity)
